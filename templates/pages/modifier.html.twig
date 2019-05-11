@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+
+{{ parent() }}
+
+    <center>
+        <h3>  Modifier l'article </h3>
+            <hr>
+             <form action="{{ path('modifier',{'id': articles.id}) }}" method="POST">
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                {{ form_widget(form) }}
+                {{ form_errors(form) }}
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+             </form>
+    </center>
+
+{% endblock %}
+
+{% block footer %}
+        {{ parent() }}
+{% endblock %}

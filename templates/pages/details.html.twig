@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="span9">
+				<div class="row">
+					<div class="span5">
+						<img src="{{ articles.images.url }}" alt="{{ articles.images.alt }}" width="470" height="310">
+					</div>
+
+					<div class="span4">
+						<h4>Nom : {{ articles.nom }}</h4>
+						<h5>Catégorie : {{ articles.categories.nom }}</h5>
+                        <h6>Date: {{articles.date|date}}</h6>
+						<p>Description: {{ articles.description }}</p>
+						<a class="btn btn-primary" href="{{ path('modifier',{'id': articles.id}) }}">Modifier</a>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+ {% block footer %}
+        {{ parent() }}
+    {% endblock %}
